@@ -88,10 +88,43 @@
 <body>
 <!--新增容器去包裹標題圖片與點擊數-->
 <div class="container">
-    <img class = "title" src = "imgs/popcat.svg" alt = "popcat"/>
-    <div class="cat-img" id="p">0</div>
+    <img class = "title" src = "imgs/popcat.svg" alt = "POPCAT"/>
+    <div class="cat-img" id="p">0202</div>
 </div>
 
+<script>
+
+    //preload op.png
+    let img = new Image();
+    img.src = 'imgs/op.png';
+
+    let count = 0;
+
+    let p = document.getElementById('p');
+
+    p.innerText = count;
+
+
+
+    function addCount() {
+        count += 1;
+    }
+
+    document.addEventListener('mousedown', function (){
+        addCount();
+        p.innerText = count;
+
+        p.id = 'op';
+        let audio = new Audio('audio/pop.mp3');
+        audio.play();
+    });
+
+    document.addEventListener('mouseup', function (){
+        p.id = 'p';
+    });
+
+
+</script>
 
 </body>
 </html>
